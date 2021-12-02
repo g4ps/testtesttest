@@ -1,25 +1,19 @@
 import logo from './logo.svg';
+import { DatePicker } from '@sberdevices/plasma-ui';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+            <DatePicker
+	onChange={
+	    (item) => {
+		alert(item);
+	    }
+	}
+            min={new Date(1970, 0, 0, 0, 0, 0)}
+            max={new Date(2021, 10, 10, 0, 0, 0)} 
+            value={new Date(2007, 3, 5, 0, 0, 0)} />
+    );
 }
 
 export default App;
